@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RESTRICTED · Can't launch here</title>
+<meta name="description" content="A launchpad on Raydium LaunchLab with a door: approved wallets launch, anyone buys. Zero platform fee, zero creator fee, ten decisions the dev makes.">
+<meta property="og:title" content="RESTRICTED · Can't launch here. Unless approved.">
+<meta property="og:description" content="A launchpad on Raydium LaunchLab with a door: approved wallets launch, anyone buys. Zero platform fee, zero creator fee, ten decisions the dev makes.">
+<meta property="og:image" content="https://restricted.one/logo/og-1200x630.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@restrictedone">
+<meta name="theme-color" content="#FFD400">
+<link rel="icon" type="image/png" sizes="32x32" href="logo/restricted-tab-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="logo/restricted-tab-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="logo/restricted-tab-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --tape: #FFD400;
+    --ink: #0B0B0B;
+    --paper: #FFFFFF;
+    --paper2: #F4F4F2;
+    --muted: #4A4A4A;
+    --line: #DADAD6;
+    --hero: #FFD400;
+    --hero-ink: #0B0B0B;
+    --band-bg: #0B0B0B;
+    --band-ink: #FFD400;
+    --btn-bg: #0B0B0B;
+    --btn-ink: #FFD400;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #F2F2F2;
+      --paper: #0B0B0B;
+      --paper2: #161616;
+      --muted: #A8A8A8;
+      --line: #2A2A2A;
+      --band-bg: #FFD400;
+      --band-ink: #0B0B0B;
+      --btn-bg: #FFD400;
+      --btn-ink: #0B0B0B;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ink: #F2F2F2;
+    --paper: #0B0B0B;
+    --paper2: #161616;
+    --muted: #A8A8A8;
+    --line: #2A2A2A;
+    --band-bg: #FFD400;
+    --band-ink: #0B0B0B;
+    --btn-bg: #FFD400;
+    --btn-ink: #0B0B0B;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: Barlow, 'Helvetica Neue', Arial, sans-serif; font-size: 18px; line-height: 1.45; overflow-x: hidden; }
+  a { color: inherit; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+  .display { font-family: Anton, Impact, 'Arial Narrow', sans-serif; font-weight: 400; letter-spacing: 0.004em; line-height: 0.92; text-transform: none; }
+  h2 { margin: 0 0 10px; font-family: Anton, Impact, sans-serif; font-weight: 400; font-size: clamp(40px, 6vw, 72px); line-height: 0.95; letter-spacing: 0.004em; }
+  h3 { margin: 0 0 6px; font-size: 20px; font-weight: 700; line-height: 1.2; }
+  p { margin: 0; }
+  .kicker { font-size: 13px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin: 0 0 14px; }
+  .lede { font-size: clamp(19px, 2.2vw, 24px); line-height: 1.4; max-width: 680px; color: var(--ink); }
+  .muted { color: var(--muted); }
+  section { padding: 64px 0; border-top: 1px solid var(--line); }
+  section.flush { border-top: 0; }
+
+  header { background: var(--hero); color: var(--hero-ink); }
+  nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; height: 72px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--hero-ink); }
+  .brand svg { width: 28px; height: 28px; flex: none; }
+  .brand .word { font-family: Anton, Impact, sans-serif; font-size: 26px; letter-spacing: 0.02em; line-height: 1; }
+  .links { display: none; gap: 26px; font-weight: 600; font-size: 16px; }
+  .links a { text-decoration: none; color: var(--hero-ink); }
+  .btn { display: inline-block; text-decoration: none; font-weight: 700; font-size: 17px; padding: 14px 22px; min-height: 48px; border: 3px solid var(--btn-bg); background: var(--btn-bg); color: var(--btn-ink); line-height: 1; }
+  .btn.secondary { background: transparent; color: inherit; border-color: currentColor; }
+  header .btn { background: #0B0B0B; color: #FFD400; border-color: #0B0B0B; }
+  header .btn.small { padding: 10px 14px; font-size: 15px; min-height: 40px; }
+  @media (min-width: 860px) { .links { display: flex; } }
+
+  .hero { background: var(--hero); color: var(--hero-ink); padding: 40px 0 0; overflow: hidden; }
+  .hero h1 { margin: 0 0 20px; font-size: clamp(64px, 10vw, 150px); }
+  .hero .lede { color: var(--hero-ink); margin-bottom: 26px; font-weight: 500; }
+  .hero .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 12px; }
+  .hero .btn.secondary { color: #0B0B0B; border-color: #0B0B0B; }
+  .hero .facts { display: flex; flex-wrap: wrap; gap: 8px 28px; font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; margin: 28px 0 40px; }
+
+  .tape-wrap { overflow: hidden; padding: 18px 0; }
+  .tape { display: block; background: var(--band-bg); color: var(--band-ink); font-family: Anton, Impact, sans-serif; font-size: clamp(22px, 3vw, 40px); letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; padding: 0.36em 0; transform: rotate(-2deg) scale(1.06); transform-origin: center; }
+  .hero .tape { background: #0B0B0B; color: #FFD400; }
+  .tape span { padding: 0 0.5em; }
+  .tape i { font-style: normal; font-family: Barlow, sans-serif; }
+
+  .grid { display: grid; gap: 14px; grid-template-columns: 1fr; }
+  @media (min-width: 640px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (min-width: 980px) { .grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  .card { background: var(--paper2); padding: 22px 20px; border-top: 4px solid var(--ink); }
+  .card .num { font-family: Anton, Impact, sans-serif; font-size: 44px; line-height: 1; margin-bottom: 10px; color: var(--ink); }
+  .card p { color: var(--muted); font-size: 17px; }
+  .card b { color: var(--ink); }
+
+  .steps { display: grid; gap: 14px; grid-template-columns: 1fr; }
+  @media (min-width: 860px) { .steps { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  .step { padding: 22px 20px; border: 3px solid var(--ink); }
+  .step .n { font-family: Anton, Impact, sans-serif; font-size: 64px; line-height: 0.9; margin-bottom: 12px; }
+  .step h3 { font-size: 26px; font-family: Anton, Impact, sans-serif; font-weight: 400; letter-spacing: 0.01em; }
+
+  .rules { display: grid; gap: 0; border-top: 3px solid var(--ink); }
+  .rule { padding: 20px 0; border-bottom: 1px solid var(--line); display: grid; gap: 6px; }
+  @media (min-width: 860px) { .rule { grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; } }
+  .rule .line { font-family: Anton, Impact, sans-serif; font-size: clamp(26px, 3.4vw, 40px); line-height: 1; letter-spacing: 0.004em; }
+  .rule p { color: var(--muted); font-size: 17px; }
+
+  .claims { display: grid; gap: 14px; grid-template-columns: 1fr; }
+  @media (min-width: 640px) { .claims { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (min-width: 980px) { .claims { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  .claim { padding: 22px 20px; background: var(--paper2); }
+  .claim h3 { font-size: 22px; }
+  .claim p { color: var(--muted); font-size: 16px; }
+  .claim .proof { margin-top: 10px; font-size: 14px; font-weight: 600; color: var(--ink); }
+  .claim .proof a { text-decoration: underline; text-underline-offset: 3px; }
+
+  .stats { display: grid; gap: 12px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  @media (min-width: 720px) { .stats { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+  .stat { padding: 22px 20px; background: var(--ink); color: var(--paper); }
+  .stat b { display: block; font-family: Anton, Impact, sans-serif; font-weight: 400; font-size: 56px; line-height: 1; color: var(--tape); }
+  .stat span { font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.85; }
+
+  .token { display: grid; gap: 28px; align-items: center; }
+  @media (min-width: 860px) { .token { grid-template-columns: 260px 1fr; } }
+  .token svg { width: 100%; max-width: 260px; height: auto; display: block; }
+  .ca { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 14px 0; font-family: var(--mono); font-size: 14px; }
+  .ca .tag { font-family: Barlow, sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.14em; }
+  .ca code { word-break: break-all; }
+  .ca button { font: 600 13px Barlow, sans-serif; border: 2px solid var(--ink); background: transparent; color: var(--ink); padding: 8px 12px; min-height: 36px; cursor: pointer; }
+  .facts-list { list-style: none; padding: 0; margin: 14px 0; display: grid; gap: 8px; color: var(--muted); font-size: 17px; }
+  .facts-list b { color: var(--ink); }
+  .cta { display: flex; flex-wrap: wrap; gap: 10px; }
+
+  .proof-slot { border: 3px dashed var(--line); padding: 22px 20px; color: var(--muted); }
+  .proof-slot code { font-family: var(--mono); font-size: 14px; }
+
+  .linkrow { display: grid; gap: 12px; grid-template-columns: 1fr; }
+  @media (min-width: 640px) { .linkrow { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (min-width: 980px) { .linkrow { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+  .linkrow a { display: flex; flex-direction: column; gap: 4px; text-decoration: none; padding: 18px; border: 3px solid var(--ink); min-height: 48px; }
+  .linkrow b { font-size: 20px; }
+  .linkrow span { color: var(--muted); font-size: 15px; }
+
+  footer { background: #0B0B0B; color: #F2F2F2; padding: 0 0 40px; margin-top: 40px; }
+  footer .tape { background: #FFD400; color: #0B0B0B; }
+  footer .row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding: 28px 0 14px; font-size: 15px; }
+  footer .row a { color: #F2F2F2; }
+  footer .brand { color: #F2F2F2; }
+  footer p { font-size: 14px; color: #A8A8A8; max-width: 820px; }
+</style>
+</head>
+<body id="top">
+
+<header>
+  <div class="wrap">
+    <nav aria-label="Site">
+      <a class="brand" href="#top" aria-label="RESTRICTED, home">
+        <svg viewBox="0 0 100 100" aria-hidden="true"><rect x="3" y="3" width="94" height="94" fill="#FFD400" stroke="#0B0B0B" stroke-width="6"></rect><g transform="rotate(-32 50 50)"><rect x="-40" y="37" width="180" height="26" fill="#0B0B0B"></rect></g></svg>
+        <span class="word">RESTRICTED</span>
+      </a>
+      <div class="links">
+        <a href="#how">The door</a>
+        <a href="#dials">The choices</a>
+        <!--until:accounts--><a href="#live">What got in</a><!--/until:accounts-->
+        <a href="/docs/">Docs</a>
+        <a href="https://x.com/restrictedone" rel="noopener" target="_blank">X</a>
+      </div>
+      <a class="btn small" href="/app/">Apply to launch</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero flush">
+    <div class="wrap">
+      <h1 class="display">Can't launch here.</h1>
+      <p class="lede">Not without an approved wallet. Buying asks nobody. On the curve, Raydium takes 0.25% and we take nothing; what the tax does is up to the dev.</p>
+      <div class="cta">
+        <a class="btn" href="/app/">Apply to launch</a>
+        <a class="btn secondary" href="/app/#/tokens">See what got in</a>
+      </div>
+      <div class="facts">
+        <span>Launching: approved wallets</span>
+        <span>Buying: anyone</span>
+        <span>Curve: Raydium's 0.25%, nothing on top</span>
+        <span>Built on Raydium LaunchLab</span>
+      </div>
+    </div>
+    <div class="tape-wrap" aria-hidden="true">
+      <div class="tape"><span>Restricted</span><i>◆</i><span>Can't launch here</span><i>◆</i><span>Restricted</span><i>◆</i><span>Can't launch here</span><i>◆</i><span>Restricted</span><i>◆</i><span>Can't launch here</span><i>◆</i><span>Restricted</span><i>◆</i><span>Can't launch here</span><i>◆</i><span>Restricted</span><i>◆</i><span>Can't launch here</span><i>◆</i></div>
+    </div>
+  </section>
+
+  <div class="wrap">
+
+    <section id="how" class="flush">
+      <p class="kicker">The door</p>
+      <h2>One gate, and it's for devs.</h2>
+      <p class="lede muted" style="margin-bottom:28px">A launchpad on Raydium LaunchLab. A wallet asks to launch, a person reads what that wallet has done, and the answer is yes or no. Nobody is asked anything to buy.</p>
+      <div class="steps">
+        <div class="step"><div class="n">1</div><h3>Ask.</h3><p class="muted">Connect, sign a message, and that's the whole form. The wallet's record is the application.</p></div>
+        <div class="step"><div class="n">2</div><h3>Pick your rules.</h3><p class="muted">Pair, tax, where the tax goes, who it pays, how often. Fixed before launch, signed, public.</p></div>
+        <div class="step"><div class="n">3</div><h3>The engine runs it.</h3><p class="muted">Each round the tax is collected, swapped into what you chose, split by your rule and sent. Every round goes up, transactions included.</p></div>
+      </div>
+    </section>
+
+    <section id="dials">
+      <p class="kicker">The choices</p>
+      <h2>Ten decisions. All of them the dev's.</h2>
+      <p class="lede muted" style="margin-bottom:28px">Elsewhere these come baked in. Here each one is set at launch and written into rules the dev signs.</p>
+      <div class="grid three">
+        <div class="card"><div class="num">01</div><h3>The pair</h3><p>Raise against any quote asset Raydium has a config for: SOL or USDC, gold, tokenized stocks. New ones appear here as Raydium adds them.</p></div>
+        <div class="card"><div class="num">02</div><h3>The tax</h3><p>Anywhere from 0 to 5%, fixed on the curve. We don't touch a token's rate afterwards, ever.</p></div>
+        <div class="card"><div class="num">03</div><h3>Where the tax goes</h3><p>Back into the pair, into any token Jupiter can route, into the token itself, into a burn, into a treasury. Any mix of those.</p></div>
+        <div class="card"><div class="num">04</div><h3>Who it pays</h3><p>Evenly, by time held, to whoever never sold, or by draw. <b>Ten wallets earn what one would have.</b></p></div>
+        <div class="card"><div class="num">05</div><h3>The buy-tax refund</h3><p>Switch it on and each round hands buyers their tax back, matched to the buy it came from. Sellers pay.</p></div>
+        <div class="card"><div class="num">06</div><h3>A second rule set</h3><p>A different split that kicks in once the token graduates, or once holders or market cap reach a number you set. Signed up front, no way back.</p></div>
+        <div class="card"><div class="num">07</div><h3>The wait</h3><p>A fresh buy earns nothing for 1 hour to 7 days, your pick. Sell before then and that share lands with the wallets that waited.</p></div>
+        <div class="card"><div class="num">08</div><h3>The jackpot</h3><p>Let a slice build up and draw it every N rounds; pot size and countdown sit on the token page.</p></div>
+        <div class="card"><div class="num">09</div><h3>The team lock</h3><p>A slice Raydium's program locks at launch: nothing until the cliff, then a straight-line release after graduation.</p></div>
+        <div class="card"><div class="num">10</div><h3>The referral cut</h3><p>Whoever brings a buyer can get as much as 1% of that curve trade, paid by the program as part of the trade. The number is the dev's.</p></div>
+      </div>
+    </section>
+
+    <section id="rules">
+      <p class="kicker">Not optional</p>
+      <h2>Same for every token here.</h2>
+      <div class="rules" style="margin-top:22px">
+        <div class="rule"><div class="line">Sell as the dev and your slice goes to the holders. Permanently.</div><p>The launch wallet and the wallets you named are read every round. Any of them holding less than last time, and the creator and treasury portions of the tax go to holders from that round on. Buying it back changes nothing.</p></div>
+        <div class="rule"><div class="line">One ticker, one token, thirty days.</div><p>Case doesn't matter and neither does a $ in front. After thirty days it's open again.</p></div>
+        <div class="rule"><div class="line">Nobody sees the mint early.</div><p>The launch transaction travels as a private bundle; the mint is unseen until its block lands. Inside that block, bots can still buy.</p></div>
+        <div class="rule"><div class="line">Leftovers are never ours.</div><p>When a share is too tiny to send, it is shared out among the holders who were paid that round, or it carries over to the next one. Nothing rounds off into the platform.</p></div>
+      </div>
+    </section>
+
+    <section id="claims">
+      <p class="kicker">Check it</p>
+      <h2>Settings, not promises.</h2>
+      <p class="lede muted" style="margin-bottom:28px">Each of these is a value on-chain or a published record. Read them yourself.</p>
+      <div class="claims">
+        <div class="claim"><h3>Zero platform fee. Zero creator fee.</h3><p>Both fields sit at zero in the platform account. On the curve you hand Raydium 0.25% and nobody else anything.</p><!--until:accounts--><div class="proof">Platform account: <a href="https://solscan.io/account/NEWCO_PLATFORM" rel="noopener" target="_blank"><code>NEWCO_PLATFORM</code></a></div><!--/until:accounts--></div>
+        <div class="claim"><h3>99.75 out of 100 reaches the curve.</h3><p>Nothing is skimmed on the way in. The dev's income comes from the pool after graduation, not from the curve.</p><div class="proof">Raydium's fee sits in the quote config; ours, at zero, in the platform account.</div></div>
+        <div class="claim"><h3>After graduation the dev gets 0.42% of pool volume.</h3><p>Claimed daily, forwarded, shown per token. The figure doesn't move; the platform's own slice absorbs whatever Raydium changes.</p><div class="proof">The pool-fee line on each token page.</div></div>
+        <div class="claim"><h3>Every round is published and can be re-run.</h3><p>Balances, the rule, who got what, the lottery seed, the signatures. The token page re-runs the round from its own snapshot and says whether it matched.</p><div class="proof">The ledger: <code>api.restricted.one/ledger/‹mint›/‹epoch›</code></div></div>
+        <div class="claim"><h3>Graduated liquidity can't leave.</h3><p>At graduation the LP splits: one part locked, one part burned, both staying in the pool for good. The mint authority is dropped when the token is created.</p><div class="proof">On-chain, at every graduation.</div></div>
+        <div class="claim"><h3>Only approved wallets get past the launch step.</h3><p>The app turns an unapproved wallet away right there, and the token list shows launches made through it and nothing else. Being approved means one thing: this wallet was allowed to launch. It covers nothing after that.</p><!--until:source--><div class="proof">The app, and <a href="https://github.com/restrictedone/restricted-engine" rel="noopener" target="_blank">its source</a>, published to be read.</div><!--/until:source--></div>
+      </div>
+    </section>
+
+    <!--until:accounts--><section id="live">
+      <p class="kicker">What got in</p>
+      <h2>Counted, not estimated.</h2>
+      <div class="stats" style="margin-top:22px" aria-label="What the engine counts">
+        <div class="stat"><b data-stat="tokens">—</b><span>tokens through the door</span></div>
+        <div class="stat"><b data-stat="creators">—</b><span>wallets that launched</span></div>
+        <div class="stat"><b data-stat="epochs">—</b><span>rounds published</span></div>
+        <div class="stat"><b data-stat="quotes">—</b><span>assets to raise against</span></div>
+      </div>
+      <p class="muted" style="font-size:14px;margin-top:12px" data-stat-when>Pulled from the engine when the page opens.</p>
+    </section><!--/until:accounts-->
+
+    <!--until:token--><section id="token">
+      <p class="kicker">The token</p>
+      <div class="token">
+        <svg viewBox="0 0 100 100" role="img" aria-label="The $RESTRICTED token image"><clipPath id="tok"><circle cx="50" cy="50" r="50"></circle></clipPath><g clip-path="url(#tok)"><rect width="100" height="100" fill="#FFD400"></rect><g transform="rotate(-32 50 50)"><rect x="-40" y="37" width="180" height="26" fill="#0B0B0B"></rect></g></g></svg>
+        <div>
+          <h2>$RESTRICTED came through the same door.</h2>
+          <p class="lede muted">Raised against USDC with a 4.2% tax. Each hour the whole tax lands in the treasury and the round goes up, transactions included.</p>
+          <div class="ca"><span class="tag">CA</span><code>NEWCO_TOKEN_MINT</code><button type="button" onclick="navigator.clipboard.writeText('NEWCO_TOKEN_MINT').then(()=>{this.textContent='copied';setTimeout(()=>this.textContent='copy',1500)})">copy</button></div>
+          <ul class="facts-list">
+            <li><b>Match the mint, not the name.</b> Dead tokens wear the same ticker. This is the one.</li>
+            <li><b>Nothing special about it.</b> Same engine, same house rules as any launch here; its rounds sit on its token page. Treasury: <a href="https://solscan.io/account/NEWCO_TREASURY" rel="noopener" target="_blank"><code>NEWCO_TREASURY</code></a>.</li>
+          </ul>
+          <div class="cta">
+            <a class="btn" href="/app/#/t/NEWCO_TOKEN_MINT">Trade $RESTRICTED</a>
+            <a class="btn secondary" href="https://raydium.io/launchpad/token/?mint=NEWCO_TOKEN_MINT" rel="noopener" target="_blank">Raydium</a>
+            <a class="btn secondary" href="https://solscan.io/token/NEWCO_TOKEN_MINT" rel="noopener" target="_blank">Solscan</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="proof">
+      <p class="kicker">Proof</p>
+      <h2>First payout: pending.</h2>
+      <div class="proof-slot" style="margin-top:22px">
+        <p>Which token, which round, what it paid and in what, how long after launch, and the transaction, pulled from the ledger once a real launch pays: <code>NEWCO_FIRST_PAYOUT</code>. Test tokens don't count.</p>
+      </div>
+    </section><!--/until:token-->
+
+    <section id="links">
+      <p class="kicker">Links</p>
+      <h2>Find it.</h2>
+      <div class="linkrow" style="margin-top:22px">
+        <a href="https://x.com/restrictedone" rel="noopener" target="_blank"><b>X</b><span>@restrictedone. One account; anything else is pretending.</span></a>
+        <a href="/docs/"><b>Docs</b><span>fees, the ten choices, house rules, how a round is recorded</span></a>
+        <!--until:source--><a href="https://github.com/restrictedone/restricted-engine" rel="noopener" target="_blank"><b>Code</b><span>the engine, readable by anyone. All rights reserved.</span></a><!--/until:source-->
+        <!--until:token--><a href="/app/#/t/NEWCO_TOKEN_MINT"><b>$RESTRICTED</b><span>where it trades, against USDC</span></a><!--/until:token-->
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="tape-wrap" aria-hidden="true">
+    <div class="tape"><span>Restricted</span><i>◆</i><span>Approved wallets only</span><i>◆</i><span>Restricted</span><i>◆</i><span>Approved wallets only</span><i>◆</i><span>Restricted</span><i>◆</i><span>Approved wallets only</span><i>◆</i><span>Restricted</span><i>◆</i><span>Approved wallets only</span><i>◆</i><span>Restricted</span><i>◆</i></div>
+  </div>
+  <div class="wrap">
+    <div class="row">
+      <a class="brand" href="#top" aria-label="RESTRICTED"><span class="word" style="font-size:22px">RESTRICTED</span></a>
+      <span>restricted.one · on Raydium LaunchLab, Solana<!--until:status--> · <a href="https://stats.uptimerobot.com/NEWCO_STATUS_PAGE" rel="noopener" target="_blank">uptime</a><!--/until:status--><!--until:source--> · <a href="https://github.com/restrictedone/restricted-engine" rel="noopener" target="_blank">code</a><!--/until:source--></span>
+    </div>
+    <p>An operator runs the engine off-chain: it takes the snapshot, applies the rule, sends the payments and publishes every round, transactions included. Every trade still pays Raydium 0.25% while on the curve, then the pool's liquidity fee once graduated.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var strip=function(){ if(location.hash) history.replaceState(null,'',location.pathname+location.search); };
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('a[href^="#"]'); if(!a) return;
+    var id=a.getAttribute('href').slice(1); var el=id==='top'?document.body:document.getElementById(id); if(!el) return;
+    e.preventDefault();
+    if(id==='top') window.scrollTo({top:0,behavior:'smooth'}); else el.scrollIntoView({behavior:'smooth',block:'start'});
+    strip();
+  });
+  if(!document.querySelector('[data-stat]')) return;
+  fetch('https://api.restricted.one/stats').then(function(r){ return r.ok?r.json():null; }).then(function(s){
+    if(!s) return;
+    var f=function(n){ return Number(n).toLocaleString('en-US'); };
+    ['tokens','creators','epochs','quotes'].forEach(function(k){ var el=document.querySelector('[data-stat="'+k+'"]'); if(el&&s[k]!=null) el.textContent=f(s[k]); });
+    var w=document.querySelector('[data-stat-when]'); if(w) w.textContent='Pulled from the engine a moment ago; it refreshes every few minutes.';
+  }).catch(function(){});
+})();
+</script>
+</body>
+</html>

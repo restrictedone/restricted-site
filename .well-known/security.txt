@@ -1,0 +1,7 @@
+# RESTRICTED (restricted.one) security contact
+Contact: https://x.com/restrictedone
+Contact: mailto:hello@restricted.one
+Preferred-Languages: en
+Canonical: https://restricted.one/.well-known/security.txt
+Policy: https://restricted.one/docs/
+Expires: 2027-10-01T00:00:00.000Z
