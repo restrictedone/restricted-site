@@ -175,7 +175,7 @@
       <div class="links">
         <a href="#how">The door</a>
         <a href="#dials">The choices</a>
-        <!--until:accounts--><a href="#live">What got in</a><!--/until:accounts-->
+        
         <a href="/docs/">Docs</a>
         <a href="https://x.com/restrictedone" rel="noopener" target="_blank">X</a>
       </div>
@@ -252,55 +252,18 @@
       <h2>Settings, not promises.</h2>
       <p class="lede muted" style="margin-bottom:28px">Each of these is a value on-chain or a published record. Read them yourself.</p>
       <div class="claims">
-        <div class="claim"><h3>Zero platform fee. Zero creator fee.</h3><p>Both fields sit at zero in the platform account. On the curve you hand Raydium 0.25% and nobody else anything.</p><!--until:accounts--><div class="proof">Platform account: <a href="https://solscan.io/account/NEWCO_PLATFORM" rel="noopener" target="_blank"><code>NEWCO_PLATFORM</code></a></div><!--/until:accounts--></div>
+        <div class="claim"><h3>Zero platform fee. Zero creator fee.</h3><p>Both fields sit at zero in the platform account. On the curve you hand Raydium 0.25% and nobody else anything.</p></div>
         <div class="claim"><h3>99.75 out of 100 reaches the curve.</h3><p>Nothing is skimmed on the way in. The dev's income comes from the pool after graduation, not from the curve.</p><div class="proof">Raydium's fee sits in the quote config; ours, at zero, in the platform account.</div></div>
         <div class="claim"><h3>After graduation the dev gets 0.42% of pool volume.</h3><p>Claimed daily, forwarded, shown per token. The figure doesn't move; the platform's own slice absorbs whatever Raydium changes.</p><div class="proof">The pool-fee line on each token page.</div></div>
         <div class="claim"><h3>Every round is published and can be re-run.</h3><p>Balances, the rule, who got what, the lottery seed, the signatures. The token page re-runs the round from its own snapshot and says whether it matched.</p><div class="proof">The ledger: <code>api.restricted.one/ledger/‹mint›/‹epoch›</code></div></div>
         <div class="claim"><h3>Graduated liquidity can't leave.</h3><p>At graduation the LP splits: one part locked, one part burned, both staying in the pool for good. The mint authority is dropped when the token is created.</p><div class="proof">On-chain, at every graduation.</div></div>
-        <div class="claim"><h3>Only approved wallets get past the launch step.</h3><p>The app turns an unapproved wallet away right there, and the token list shows launches made through it and nothing else. Being approved means one thing: this wallet was allowed to launch. It covers nothing after that.</p><!--until:source--><div class="proof">The app, and <a href="https://github.com/restrictedone/restricted-engine" rel="noopener" target="_blank">its source</a>, published to be read.</div><!--/until:source--></div>
+        <div class="claim"><h3>Only approved wallets get past the launch step.</h3><p>The app turns an unapproved wallet away right there, and the token list shows launches made through it and nothing else. Being approved means one thing: this wallet was allowed to launch. It covers nothing after that.</p></div>
       </div>
     </section>
 
-    <!--until:accounts--><section id="live">
-      <p class="kicker">What got in</p>
-      <h2>Counted, not estimated.</h2>
-      <div class="stats" style="margin-top:22px" aria-label="What the engine counts">
-        <div class="stat"><b data-stat="tokens">—</b><span>tokens through the door</span></div>
-        <div class="stat"><b data-stat="creators">—</b><span>wallets that launched</span></div>
-        <div class="stat"><b data-stat="epochs">—</b><span>rounds published</span></div>
-        <div class="stat"><b data-stat="quotes">—</b><span>assets to raise against</span></div>
-      </div>
-      <p class="muted" style="font-size:14px;margin-top:12px" data-stat-when>Pulled from the engine when the page opens.</p>
-    </section><!--/until:accounts-->
+    
 
-    <!--until:token--><section id="token">
-      <p class="kicker">The token</p>
-      <div class="token">
-        <svg viewBox="0 0 100 100" role="img" aria-label="The $RESTRICTED token image"><clipPath id="tok"><circle cx="50" cy="50" r="50"></circle></clipPath><g clip-path="url(#tok)"><rect width="100" height="100" fill="#FFD400"></rect><g transform="rotate(-32 50 50)"><rect x="-40" y="37" width="180" height="26" fill="#0B0B0B"></rect></g></g></svg>
-        <div>
-          <h2>$RESTRICTED came through the same door.</h2>
-          <p class="lede muted">Raised against USDC with a 4.2% tax. Each hour the whole tax lands in the treasury and the round goes up, transactions included.</p>
-          <div class="ca"><span class="tag">CA</span><code>NEWCO_TOKEN_MINT</code><button type="button" onclick="navigator.clipboard.writeText('NEWCO_TOKEN_MINT').then(()=>{this.textContent='copied';setTimeout(()=>this.textContent='copy',1500)})">copy</button></div>
-          <ul class="facts-list">
-            <li><b>Match the mint, not the name.</b> Dead tokens wear the same ticker. This is the one.</li>
-            <li><b>Nothing special about it.</b> Same engine, same house rules as any launch here; its rounds sit on its token page. Treasury: <a href="https://solscan.io/account/NEWCO_TREASURY" rel="noopener" target="_blank"><code>NEWCO_TREASURY</code></a>.</li>
-          </ul>
-          <div class="cta">
-            <a class="btn" href="/app/#/t/NEWCO_TOKEN_MINT">Trade $RESTRICTED</a>
-            <a class="btn secondary" href="https://raydium.io/launchpad/token/?mint=NEWCO_TOKEN_MINT" rel="noopener" target="_blank">Raydium</a>
-            <a class="btn secondary" href="https://solscan.io/token/NEWCO_TOKEN_MINT" rel="noopener" target="_blank">Solscan</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="proof">
-      <p class="kicker">Proof</p>
-      <h2>First payout: pending.</h2>
-      <div class="proof-slot" style="margin-top:22px">
-        <p>Which token, which round, what it paid and in what, how long after launch, and the transaction, pulled from the ledger once a real launch pays: <code>NEWCO_FIRST_PAYOUT</code>. Test tokens don't count.</p>
-      </div>
-    </section><!--/until:token-->
+    
 
     <section id="links">
       <p class="kicker">Links</p>
@@ -308,8 +271,8 @@
       <div class="linkrow" style="margin-top:22px">
         <a href="https://x.com/restrictedone" rel="noopener" target="_blank"><b>X</b><span>@restrictedone. One account; anything else is pretending.</span></a>
         <a href="/docs/"><b>Docs</b><span>fees, the ten choices, house rules, how a round is recorded</span></a>
-        <!--until:source--><a href="https://github.com/restrictedone/restricted-engine" rel="noopener" target="_blank"><b>Code</b><span>the engine, readable by anyone. All rights reserved.</span></a><!--/until:source-->
-        <!--until:token--><a href="/app/#/t/NEWCO_TOKEN_MINT"><b>$RESTRICTED</b><span>where it trades, against USDC</span></a><!--/until:token-->
+        
+        
       </div>
     </section>
 
@@ -323,7 +286,7 @@
   <div class="wrap">
     <div class="row">
       <a class="brand" href="#top" aria-label="RESTRICTED"><span class="word" style="font-size:22px">RESTRICTED</span></a>
-      <span>restricted.one · on Raydium LaunchLab, Solana<!--until:status--> · <a href="https://stats.uptimerobot.com/NEWCO_STATUS_PAGE" rel="noopener" target="_blank">uptime</a><!--/until:status--><!--until:source--> · <a href="https://github.com/restrictedone/restricted-engine" rel="noopener" target="_blank">code</a><!--/until:source--></span>
+      <span>restricted.one · on Raydium LaunchLab, Solana</span>
     </div>
     <p>An operator runs the engine off-chain: it takes the snapshot, applies the rule, sends the payments and publishes every round, transactions included. Every trade still pays Raydium 0.25% while on the curve, then the pool's liquidity fee once graduated.</p>
   </div>
