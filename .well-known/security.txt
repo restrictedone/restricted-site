@@ -1,5 +1,5 @@
 # RESTRICTED (restricted.one) security contact
-Contact: https://x.com/restrictedone
+Contact: https://x.com/restricted_sol
 Contact: mailto:hello@restricted.one
 Preferred-Languages: en
 Canonical: https://restricted.one/.well-known/security.txt
