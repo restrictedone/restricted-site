@@ -175,7 +175,7 @@
       <div class="links">
         <a href="#how">The door</a>
         <a href="#dials">The choices</a>
-        
+        <a href="#live">What got in</a>
         <a href="/docs/">Docs</a>
         <a href="https://x.com/restricted_sol" rel="noopener" target="_blank">X</a>
       </div>
@@ -252,7 +252,7 @@
       <h2>Settings, not promises.</h2>
       <p class="lede muted" style="margin-bottom:28px">Each of these is a value on-chain or a published record. Read them yourself.</p>
       <div class="claims">
-        <div class="claim"><h3>Zero platform fee. Zero creator fee.</h3><p>Both fields sit at zero in the platform account. On the curve you hand Raydium 0.25% and nobody else anything.</p></div>
+        <div class="claim"><h3>Zero platform fee. Zero creator fee.</h3><p>Both fields sit at zero in the platform account. On the curve you hand Raydium 0.25% and nobody else anything.</p><div class="proof">Platform account: <a href="https://solscan.io/account/4GVHo2sCJ7mBaZhk9BLeT7gLSx8GVuWaiassti8sKCWn" rel="noopener" target="_blank"><code>4GVHo2sCJ7mBaZhk9BLeT7gLSx8GVuWaiassti8sKCWn</code></a></div></div>
         <div class="claim"><h3>99.75 out of 100 reaches the curve.</h3><p>Nothing is skimmed on the way in. The dev's income comes from the pool after graduation, not from the curve.</p><div class="proof">Raydium's fee sits in the quote config; ours, at zero, in the platform account.</div></div>
         <div class="claim"><h3>After graduation the dev gets 0.42% of pool volume.</h3><p>Claimed daily, forwarded, shown per token. The figure doesn't move; the platform's own slice absorbs whatever Raydium changes.</p><div class="proof">The pool-fee line on each token page.</div></div>
         <div class="claim"><h3>Every round is published and can be re-run.</h3><p>Balances, the rule, who got what, the lottery seed, the signatures. The token page re-runs the round from its own snapshot and says whether it matched.</p><div class="proof">The ledger: <code>api.restricted.one/ledger/‹mint›/‹epoch›</code></div></div>
@@ -261,9 +261,46 @@
       </div>
     </section>
 
-    
+    <section id="live">
+      <p class="kicker">What got in</p>
+      <h2>Counted, not estimated.</h2>
+      <div class="stats" style="margin-top:22px" aria-label="What the engine counts">
+        <div class="stat"><b data-stat="tokens">—</b><span>tokens through the door</span></div>
+        <div class="stat"><b data-stat="creators">—</b><span>wallets that launched</span></div>
+        <div class="stat"><b data-stat="epochs">—</b><span>rounds published</span></div>
+        <div class="stat"><b data-stat="quotes">—</b><span>assets to raise against</span></div>
+      </div>
+      <p class="muted" style="font-size:14px;margin-top:12px" data-stat-when>Pulled from the engine when the page opens.</p>
+    </section>
 
-    
+    <section id="token">
+      <p class="kicker">The token</p>
+      <div class="token">
+        <svg viewBox="0 0 100 100" role="img" aria-label="The $RESTRICTED token image"><clipPath id="tok"><circle cx="50" cy="50" r="50"></circle></clipPath><g clip-path="url(#tok)"><rect width="100" height="100" fill="#FFD400"></rect><g transform="rotate(-32 50 50)"><rect x="-40" y="37" width="180" height="26" fill="#0B0B0B"></rect></g></g></svg>
+        <div>
+          <h2>$RESTRICTED came through the same door.</h2>
+          <p class="lede muted">Raised against SOL with a 4.2% tax. Each hour the whole tax lands in the treasury and the round goes up, transactions included.</p>
+          <div class="ca"><span class="tag">CA</span><code>HctJTnUUyM8b1Vy6voR3BXC1z9t5uEbR2TCaDqHvsLXj</code><button type="button" onclick="navigator.clipboard.writeText('HctJTnUUyM8b1Vy6voR3BXC1z9t5uEbR2TCaDqHvsLXj').then(()=>{this.textContent='copied';setTimeout(()=>this.textContent='copy',1500)})">copy</button></div>
+          <ul class="facts-list">
+            <li><b>Match the mint, not the name.</b> Dead tokens wear the same ticker. This is the one.</li>
+            <li><b>Nothing special about it.</b> Same engine, same house rules as any launch here; its rounds sit on its token page. Treasury: <a href="https://solscan.io/account/DvpHKaHoxCUet7DDN21bLYcN3Rbxb4nNxEG5mf83PZZ" rel="noopener" target="_blank"><code>DvpHKaHoxCUet7DDN21bLYcN3Rbxb4nNxEG5mf83PZZ</code></a>.</li>
+          </ul>
+          <div class="cta">
+            <a class="btn" href="/app/#/t/HctJTnUUyM8b1Vy6voR3BXC1z9t5uEbR2TCaDqHvsLXj">Trade $RESTRICTED</a>
+            <a class="btn secondary" href="https://raydium.io/launchpad/token/?mint=HctJTnUUyM8b1Vy6voR3BXC1z9t5uEbR2TCaDqHvsLXj" rel="noopener" target="_blank">Raydium</a>
+            <a class="btn secondary" href="https://solscan.io/token/HctJTnUUyM8b1Vy6voR3BXC1z9t5uEbR2TCaDqHvsLXj" rel="noopener" target="_blank">Solscan</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="proof">
+      <p class="kicker">Proof</p>
+      <h2>First payout: 36 minutes after launch.</h2>
+      <div class="proof-slot" style="margin-top:22px">
+        <p>$RESTRICTED, round 1, 8 November 2026, 20:05 UTC. The engine withdrew 41,031,996.61 RESTRICTED of tax, swapped it on the token's own curve and delivered <b>1.256111885 SOL</b> to the treasury, 36 minutes after the launch at 19:28 UTC. <a href="https://solscan.io/tx/2Qn6r41iHjCatB5CHoftX975KchT4wZtNPkBnp9Sa62j6mvqUyXicmwwdsvSTNHtwikDVjND6XBKMkxDdhde51CK" rel="noopener" target="_blank">The transaction</a>, and <a href="/app/#/t/HctJTnUUyM8b1Vy6voR3BXC1z9t5uEbR2TCaDqHvsLXj">the round on the token page</a>.</p>
+      </div>
+    </section>
 
     <section id="links">
       <p class="kicker">Links</p>
@@ -272,7 +309,7 @@
         <a href="https://x.com/restricted_sol" rel="noopener" target="_blank"><b>X</b><span>@restricted_sol. One account; anything else is pretending.</span></a>
         <a href="/docs/"><b>Docs</b><span>fees, the ten choices, house rules, how a round is recorded</span></a>
         
-        
+        <a href="/app/#/t/HctJTnUUyM8b1Vy6voR3BXC1z9t5uEbR2TCaDqHvsLXj"><b>$RESTRICTED</b><span>where it trades, against SOL</span></a>
       </div>
     </section>
 
